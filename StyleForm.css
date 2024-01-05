@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins',Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+/* border: 2px solid red; */
+}
+
+
+:root {
+    --bg: #1d3557;
+    --c1: #457b9d;
+    --c2: #fff;
+    --c3: #a8dadc;
+  }
+  
+  
+  header {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 25vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(141deg, rgba(0, 255, 255, 0.654) 0%, rgba(102, 51, 153, 0.591) 40%, rgba(255, 20, 145, 0.585) 90%);
+    overflow: hidden;
+  }
+  
+  header::after {
+    content: "";
+    width: 100%;
+    height: 20vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-size: 70% 7%;
+    background-image:
+      linear-gradient(var(--c1),var(--c1)),
+      linear-gradient(var(--c2),var(--c2)),
+      linear-gradient(var(--c1),var(--c1)),
+      linear-gradient(var(--c2),var(--c2)),
+      linear-gradient(var(--c1),var(--c1)),
+      linear-gradient(var(--c2),var(--c2)),
+      linear-gradient(var(--c1),var(--c1));
+    background-position: 0% 7%, 100% 21%, 0% 35%, 100% 49%, 0% 63%, 100% 77%, 0% 91%;
+    animation: showBars 1.25s;
+  }
+  
+  @keyframes showText {
+    0% { opacity: 0; transform: translate(0, -100%); }
+    20% { opacity: 0; }
+    100% { opacity: 1; transform: translate(0, 0); }
+  }
+  
+  header > div {
+    position: relative;
+    transform: translate(-100%, 0);
+    opacity: 0;
+    animation: showText 2s 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    text-align: center;
+  }
+  .headkerala h1 {
+    font-weight: 400;
+    font-family: Oswald, Montserrat, arial, sans-serif;
+    margin: 0;
+    font-size: 6vw;
+    color: var(--c2);
+    text-align: center;
+  }
+  
+  .headkerala p{
+    font-size: 30px;
+  }
+  
+  p {
+    color: var(--c3);
+    margin: 0;
+    font-size: 16px;
+    margin-bottom: 5vh;
+    text-align: center;
+  } 
+  
+  @keyframes showBarsBig {
+    0% { opacity: 0; background-position: 7% -400%, 21% 500%, 35% -400%, 49% 500%, 63% -400%, 77% 500%, 91% -400%; }
+    14% { background-position: 7% 0%, 21% 500%, 35% -400%, 49% 500%, 63% -400%, 77% 500%, 91% -400%; }
+    28% { background-position: 7% 0%, 21% 100%, 35% -400%, 49% 500%, 63% -400%, 77% 500%, 91% -400%; }
+    42% { background-position: 7% 0%, 21% 100%, 35% 0%, 49% 500%, 63% -400%, 77% 500%, 91% -400%; }
+    56% { background-position: 7% 0%, 21% 100%, 35% 0%, 49% 100%, 63% -400%, 77% 500%, 91% -400%; }
+    70% { background-position: 7% 0%, 21% 100%, 35% 0%, 49% 100%, 63% 0%, 77% 500%, 91% -400%; }
+    84% { background-position: 7% 0%, 21% 100%, 35% 0%, 49% 100%, 63% 0%, 77% 100%, 91% -400%; }
+    98%, 100% { opacity: 1; background-position: 7% 0%, 21% 100%, 35% 0%, 49% 100%, 63% 0%, 77% 100%, 91% 0%; }
+  }
+  
+  @keyframes showTextBig {
+    0% { opacity: 0; transform: translate(-100%, 0); }
+    20% { opacity: 0; }
+    100% { opacity: 1; transform: translate(0vw, 0); }
+  }
+  
+  
+  
+  header::after {
+    width: 20vw;
+    height: 100%;
+    background-size: 7% 70%;
+    background-position: 
+      7% 0%, 21% 100%, 35% 0%, 49% 100%, 63% 0%, 77% 100%, 91% 0%;
+    animation-name: showBarsBig;
+  }
+  
+  header > div {
+    animation-name: showTextBig;
+    margin-left: 22vw;
+    text-align: left;
+  }
+  
+  @media all and (min-width: 768px) {
+  
+    h1 {
+      font-size: 8vw;
+    }
+  
+    p {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (prefers-reduced-motion) {
+    header::after {
+      animation: none !important;
+    }
+    
+    @keyframes showTextReduced {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    
+    
+    header > div {
+      transform: translate(0,0);
+      animation-name: showTextReduced;
+      animation-delay: 0.5s !important;
+    }
+  }
+
+.sectionA,
+  .sectionB {
+    max-height: 700px;
+    flex: 1;
+    overflow: hidden; /* Ensure the videos won't overflow the container */
+    position: relative;
+    max-height: 700px;
+  }
+
+.headerMain{
+  background-color:rgba(20, 191, 134, 0.6) ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  position: absolute;
+  align-self: flex-start;
+}
+
+.headerMain h1,.home,.Contact,.WhereTo{
+  display: inline-block;
+  max-width: fit-content;
+}
+
+.nav,.home,.WhereTo,.Contact{
+  padding: 8px;
+}
+
+@media (max-width: 768px) {
+  #form {
+    width: 100% !important; /* Change the width to 100% on smaller screens */
+  }
+  .nav,.home,.WhereTo,.Contact{
+    padding: 2px;
+  }
+  .home,.WhereTo,.Contact{
+    font-size: small;
+  }
+}
+
+
